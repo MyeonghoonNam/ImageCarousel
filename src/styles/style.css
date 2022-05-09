@@ -41,3 +41,98 @@
   font-weight: 700;
   cursor: pointer;
 }
+
+#carousel {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-cont {
+  perspective: 1000px;
+}
+
+.carousel-list {
+  position: relative;
+  width: 464px;
+  height: 464px;
+  transform-style: preserve-3d;
+}
+
+.carousel-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+  -webkit-box-reflect: below 35px
+    linear-gradient(transparent 45%, rgba(255, 255, 255, 0.25));
+}
+
+.carousel-item:first-child {
+  transform: translateZ(150px);
+}
+
+.carousel-item:nth-child(2) {
+  transform: rotateY(120deg) translateZ(250px) rotateY(-120deg);
+}
+
+.carousel-item:nth-child(3) {
+  transform: rotateY(240deg) translateZ(250px) rotateY(-240deg);
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  filter: brightness(70%);
+  /* filter 속성은 브라우저 호환성이 좋지 못함 */
+}
+
+.now img {
+  filter: brightness(100%);
+}
+
+/* filter 대신 가상요소로 블러처리가 가능*/
+/* .carousel-item::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.3;
+  z-index: 10;
+} */
+
+.prev-btn,
+.next-btn {
+  position: absolute;
+  width: 140px;
+  height: 62px;
+  background: #fff;
+  border: 3px solid #828282;
+  border-radius: 36.5px;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #828282;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 149px;
+}
+
+.next-btn {
+  right: 149px;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  background: #828282;
+  color: #fff;
+}
