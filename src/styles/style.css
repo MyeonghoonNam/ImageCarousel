@@ -1,0 +1,13 @@
+@import "reset.css";
+
+/* utils */
+.util-ir {
+  /* Image Replacement 기법을 활용해 텍스트 숨기기 */
+  display: block;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  font-size: 1px;
+  line-height: 0;
+  text-indent: -9999px;
+}
